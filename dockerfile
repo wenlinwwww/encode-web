@@ -6,13 +6,13 @@ WORKDIR /app
 
 # 复制项目文件
 COPY package.json package-lock.json ./ 
-RUN npm install # 使用 npm 安装依赖
+RUN npm install 
 
 # 复制项目的所有文件到容器
 COPY . ./
 
 # 构建项目
-RUN npm run build # 运行 npm 的构建脚本
+RUN npm run build 
 
 # 使用 Nginx 运行应用
 FROM nginx:alpine
